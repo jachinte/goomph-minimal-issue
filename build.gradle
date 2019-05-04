@@ -1,0 +1,21 @@
+plugins {
+  id "java"
+  id "org.xtext.builder" version "2.0.4"
+  id "com.diffplug.gradle.p2.asmaven" version "3.17.6"
+}
+
+p2AsMaven {
+  group "som", {
+    repoEclipse "4.11"
+    repo "https://download.eclipse.org/modeling/emf/updates/"
+    repo "https://download.eclipse.org/modeling/mdt/ocl/updates/releases/latest/"
+    repo "https://som-research.github.io/openapi-metamodel/update/"
+    feature "edu.uoc.som.openapi.feature"
+    slicingOption "latestVersionOnly", "true"
+  }
+}
+
+dependencies {
+  implementation "som:edu.uoc.som.openapi:1.0.3.201804111106"
+  implementation "som:edu.uoc.som.openapi.io:1.0.3.201804111106"
+}
